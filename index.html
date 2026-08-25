@@ -475,13 +475,14 @@
 
         /* Local (PIP) video */
         .call-local-video-wrap{
-            position:absolute; top:max(var(--safe-top),70px); right:14px;
-            width:110px; height:160px; border-radius:16px; overflow:hidden;
-            z-index:10; box-shadow:0 8px 24px rgba(0,0,0,.5);
-            border:2px solid rgba(255,255,255,.2); background:#000;
-            transition:all .25s var(--easing); cursor:pointer;
+            position:absolute; top:max(var(--safe-top),80px); right:12px;
+            width:90px; height:130px; border-radius:14px; overflow:hidden;
+            z-index:15; box-shadow:0 6px 18px rgba(0,0,0,.5);
+            border:2px solid rgba(255,255,255,.25); background:#000;
+            transition:width .25s var(--easing), height .25s var(--easing), border-radius .25s var(--easing);
+            cursor:move; touch-action:none; user-select:none;
         }
-        .call-local-video-wrap.minimized{ width:70px; height:100px; border-radius:12px; }
+        .call-local-video-wrap.minimized{ width:60px; height:85px; border-radius:10px; }
         .call-local-video-wrap audio-only{ width:70px; height:70px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:var(--primary); }
         .call-local-video-wrap video{ width:100%; height:100%; object-fit:cover; transform:scaleX(-1); }
         .call-local-video-wrap .mic-off-badge{ position:absolute; bottom:4px; right:4px; background:#E91E63; width:20px; height:20px; border-radius:50%; display:none; align-items:center; justify-content:center; }
@@ -495,16 +496,21 @@
         }
         .call-avatars-row{ display:flex; justify-content:center; margin-bottom:14px; }
         .call-avatar-big{
-            width:110px; height:110px; border-radius:50%;
+            width:72px; height:72px; border-radius:50%;
             background:linear-gradient(135deg,var(--primary),var(--primary-dark));
             display:flex; align-items:center; justify-content:center;
-            font-size:42px; font-weight:800; color:#fff; overflow:hidden;
-            box-shadow:0 0 0 4px rgba(255,255,255,.1), 0 8px 30px rgba(0,0,0,.4);
+            font-size:28px; font-weight:800; color:#fff; overflow:hidden;
+            box-shadow:0 0 0 3px rgba(255,255,255,.1), 0 4px 16px rgba(0,0,0,.4);
             animation:callAvatarPulse 2s ease-in-out infinite;
+            transition:all .3s var(--easing);
         }
+        .call-screen.video-active .call-avatar-big{ width:48px; height:48px; font-size:18px; }
+        .call-screen.video-active .call-header{ text-align:left; padding-left:70px; }
+        .call-screen.video-active .call-avatars-row{ justify-content:flex-start; margin-bottom:6px; }
         .call-avatar-big img{ width:100%; height:100%; object-fit:cover; }
         @keyframes callAvatarPulse{ 0%,100%{ box-shadow:0 0 0 4px rgba(255,255,255,.1), 0 8px 30px rgba(0,0,0,.4);} 50%{ box-shadow:0 0 0 12px rgba(255,255,255,.05), 0 8px 30px rgba(0,0,0,.4);} }
-        .call-name{ font-size:24px; font-weight:800; margin-bottom:4px; }
+        .call-name{ font-size:20px; font-weight:800; margin-bottom:2px; }
+        .call-screen.video-active .call-name{ font-size:16px; }
         .call-status-text{ font-size:14px; color:rgba(255,255,255,.7); display:flex; align-items:center; justify-content:center; gap:6px; }
         .call-status-text .dots{ display:inline-flex; gap:3px; }
         .call-status-text .dots span{ width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.5); animation:pulseDot 1.4s infinite; }
@@ -514,30 +520,30 @@
 
         /* Call controls */
         .call-controls{
-            position:absolute; bottom:max(var(--safe-bottom),40px); left:0; right:0;
-            z-index:20; display:flex; flex-direction:column; align-items:center; gap:24px;
+            position:absolute; bottom:max(var(--safe-bottom),24px); left:0; right:0;
+            z-index:20; display:flex; flex-direction:column; align-items:center; gap:18px;
         }
-        .call-controls-row{ display:flex; gap:18px; justify-content:center; align-items:center; }
+        .call-controls-row{ display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap:wrap; max-width:100%; padding:0 10px; }
         .call-btn{
-            width:64px; height:64px; border-radius:50%; border:none;
+            width:48px; height:48px; border-radius:50%; border:none;
             background:rgba(255,255,255,.15); color:#fff;
             display:flex; align-items:center; justify-content:center;
             cursor:pointer; transition:all .2s var(--easing);
             backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-            position:relative;
+            position:relative; flex-shrink:0;
         }
         .call-btn:hover{ background:rgba(255,255,255,.25); transform:scale(1.06); }
         .call-btn:active{ transform:scale(.92); }
-        .call-btn i{ font-size:28px; }
+        .call-btn i{ font-size:22px; }
         .call-btn.active{ background:rgba(255,255,255,.9); color:#16213e; }
         .call-btn.off{ background:rgba(233,30,99,.85); }
-        .call-btn .label{ position:absolute; bottom:-22px; left:50%; transform:translateX(-50%); font-size:11px; color:rgba(255,255,255,.6); white-space:nowrap; }
+        .call-btn .label{ position:absolute; bottom:-18px; left:50%; transform:translateX(-50%); font-size:9px; color:rgba(255,255,255,.6); white-space:nowrap; }
         .call-btn-end{
-            width:72px; height:72px; background:#E91E63;
-            box-shadow:0 6px 20px rgba(233,30,99,.5);
+            width:56px; height:56px; background:#E91E63;
+            box-shadow:0 4px 14px rgba(233,30,99,.5);
         }
         .call-btn-end:hover{ background:#d81b60; box-shadow:0 8px 24px rgba(233,30,99,.6); }
-        .call-btn-end i{ font-size:32px; }
+        .call-btn-end i{ font-size:26px; }
 
         /* Call connecting spinner */
         .call-connecting-ring{
@@ -776,10 +782,11 @@
                         <div class="row-label">Dark Mode</div>
                         <div class="toggle" id="darkModeToggle"></div>
                     </div>
-                    <div class="settings-row-item">
+                    <div class="settings-row-item" onclick="cycleFontSize()">
                         <i class="material-icons row-ic">format_size</i>
                         <div class="row-label">Font Size</div>
-                        <div class="row-value">Medium</div>
+                        <div class="row-value" id="fontSizeLabel">Medium</div>
+                        <i class="material-icons chev">chevron_right</i>
                     </div>
                 </div>
 
@@ -1096,6 +1103,8 @@
     // ============ INIT ============
     window.onload = function() {
         applyTheme(localStorage.getItem('isb_theme') || 'default');
+        let savedFont = localStorage.getItem('isb_fontsize');
+        if(savedFont){ document.body.style.fontSize = savedFont; let lbl = document.getElementById('fontSizeLabel'); if(lbl){ let m = {'14px':'Small','15px':'Medium','17px':'Large'}; lbl.innerText = m[savedFont] || 'Medium'; } }
         initEmojiGrid();
         currentUserEmail = localStorage.getItem("isb_email");
         if(currentUserEmail) initAppFlow();
@@ -1119,6 +1128,22 @@
         let isDark = cur==='dark'||cur==='amoled'||cur==='cyberpunk';
         applyTheme(isDark ? 'default' : 'dark');
         showToast(isDark ? 'Light mode' : 'Dark mode', 'success', 1500);
+    }
+
+    function cycleFontSize(){
+        let sizes = [
+            { label:'Small', val:'14px' },
+            { label:'Medium', val:'15px' },
+            { label:'Large', val:'17px' }
+        ];
+        let cur = localStorage.getItem('isb_fontsize') || '15px';
+        let idx = sizes.findIndex(s => s.val === cur);
+        if(idx === -1) idx = 1;
+        let next = sizes[(idx + 1) % sizes.length];
+        localStorage.setItem('isb_fontsize', next.val);
+        document.body.style.fontSize = next.val;
+        document.getElementById('fontSizeLabel').innerText = next.label;
+        showToast('Font: ' + next.label, 'success', 1200);
     }
 
     function handleCredentialResponse(response) {
@@ -2135,6 +2160,7 @@
     }
     function hideCallScreen() {
         document.getElementById('callScreen').classList.remove('active');
+        document.getElementById('callScreen').classList.remove('video-active');
     }
     function setCallStatus(text) {
         document.getElementById('callStatusText').innerHTML = text.includes('...')
@@ -2167,6 +2193,7 @@
             remoteVideo.srcObject = callState.remoteStream;
             remoteVideo.classList.remove('hidden');
             remoteAudio.srcObject = callState.remoteStream;
+            document.getElementById('callScreen').classList.add('video-active');
         } else {
             remoteAudio.srcObject = callState.remoteStream;
         }
@@ -2498,6 +2525,62 @@
         } catch(e) { showToast('Could not switch camera', 'error'); }
     }
     function togglePIPSize() { document.getElementById('localVideoWrap').classList.toggle('minimized'); }
+
+    // ============ DRAGGABLE PIP VIDEO (WhatsApp-style) ============
+    (function(){
+        let pipEl = null, isDragging = false, startX = 0, startY = 0, offsetX = 0, offsetY = 0, hasMoved = false;
+
+        function initPipDrag(){
+            pipEl = document.getElementById('localVideoWrap');
+            if(!pipEl) return;
+            pipEl.addEventListener('touchstart', onDragStart, {passive:false});
+            pipEl.addEventListener('touchmove', onDragMove, {passive:false});
+            pipEl.addEventListener('touchend', onDragEnd);
+            pipEl.addEventListener('mousedown', onDragStart);
+            document.addEventListener('mousemove', onDragMove);
+            document.addEventListener('mouseup', onDragEnd);
+        }
+
+        function onDragStart(e){
+            if(!pipEl) pipEl = document.getElementById('localVideoWrap');
+            if(!pipEl) return;
+            isDragging = true; hasMoved = false;
+            let pt = e.touches ? e.touches[0] : e;
+            let rect = pipEl.getBoundingClientRect();
+            offsetX = pt.clientX - rect.left;
+            offsetY = pt.clientY - rect.top;
+            if(e.cancelable) e.preventDefault();
+        }
+
+        function onDragMove(e){
+            if(!isDragging || !pipEl) return;
+            let pt = e.touches ? e.touches[0] : e;
+            if(!pt) return;
+            let newX = pt.clientX - offsetX;
+            let newY = pt.clientY - offsetY;
+            let maxX = window.innerWidth - pipEl.offsetWidth;
+            let maxY = window.innerHeight - pipEl.offsetHeight;
+            newX = Math.max(4, Math.min(newX, maxX - 4));
+            newY = Math.max(4, Math.min(newY, maxY - 4));
+            // Remove right/top positioning, use left/top
+            pipEl.style.right = 'auto';
+            pipEl.style.top = newY + 'px';
+            pipEl.style.left = newX + 'px';
+            hasMoved = true;
+            if(e.cancelable) e.preventDefault();
+        }
+
+        function onDragEnd(e){
+            if(!isDragging) return;
+            isDragging = false;
+            // If user just tapped without dragging, toggle size
+            if(!hasMoved){ togglePIPSize(); }
+        }
+
+        // Initialize when DOM is ready
+        if(document.readyState !== 'loading') initPipDrag();
+        else document.addEventListener('DOMContentLoaded', initPipDrag);
+    })();
 
     // ============ END CALL ============
     function endCall(skipNotify) {
