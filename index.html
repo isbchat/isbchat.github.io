@@ -2084,13 +2084,16 @@
             });
 
             // --- FCM Notification Trigger ---
-            let uInfo = getUserInfoByEmail(currentChatContact);
-            database.ref('users/' + uInfo.username).once('value').then((snap) => {
-                let userData = snap.val();
-                if (userData && userData.fcmToken) {
-                    sendPushNotification(userData.fcmToken, currentUsername, callState.callType);
-                }
-            });
+            try {
+                database.ref('users/' + uInfo.username).once('value').then((snap) => {
+                    let userData = snap.val();
+                    if (userData && userData.fcmToken) {
+                        sendPushNotification(userData.fcmToken, currentUsername, callState.callType);
+                    }
+                });
+            } catch(e) {
+                console.log("Notification Error:", e);
+            }
 
             // Listen for answer and ICE candidates
             setupSignalingListeners();
