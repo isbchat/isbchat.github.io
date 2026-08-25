@@ -2083,6 +2083,15 @@
                 timestamp: Date.now()
             });
 
+            // --- FCM Notification Trigger ---
+            let uInfo = getUserInfoByEmail(currentChatContact);
+            database.ref('users/' + uInfo.username).once('value').then((snap) => {
+                let userData = snap.val();
+                if (userData && userData.fcmToken) {
+                    sendPushNotification(userData.fcmToken, currentUsername, callState.callType);
+                }
+            });
+
             // Listen for answer and ICE candidates
             setupSignalingListeners();
 
@@ -2763,6 +2772,29 @@
             database.ref('calls/' + callState.callRoomId + '/ended').set(true);
         }
     });
+
+    // ============ FCM PUSH NOTIFICATION ============
+    function saveFcmToken(token) {
+        if (currentUsername) {
+            database.ref('users/' + currentUsername).update({ fcmToken: token });
+        }
+    }
+
+    function sendPushNotification(targetToken, callerName, callType) {
+        // 👇 यहाँ अपना वही नया लिंक डालें जो आपने अभी कॉपी किया था 👇
+        const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyagpafI4_IWQ-oWHfB5kFc7L4fdtqIEK1bEHlsV9hjpRqE1iEa03L5SUT3ihPmaByKOw/exec"; 
+        
+        let notificationData = {
+            "token": targetToken,
+            "title": callerName + " is calling...",
+            "body": "Incoming " + callType + " call. Tap to answer!"
+        };
+
+        fetch(WEB_APP_URL, {
+            method: "POST",
+            body: JSON.stringify(notificationData)
+        });
+    }
 
     // Close modals on overlay click
     document.querySelectorAll('.modal-overlay').forEach(o=>{
