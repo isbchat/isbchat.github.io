@@ -2867,7 +2867,6 @@
     }
 
     function sendPushNotification(targetToken, callerName, callType) {
-        // 👇 यहाँ अपना वही नया लिंक डालें जो आपने अभी कॉपी किया था 👇
         const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyagpafI4_IWQ-oWHfB5kFc7L4fdtqIEK1bEHlsV9hjpRqE1iEa03L5SUT3ihPmaByKOw/exec"; 
         
         let notificationData = {
@@ -2878,8 +2877,10 @@
 
         fetch(WEB_APP_URL, {
             method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "text/plain" },
             body: JSON.stringify(notificationData)
-        });
+        }).catch(err => console.log("Push Error:", err));
     }
 
     // Close modals on overlay click
