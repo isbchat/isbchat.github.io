@@ -123,27 +123,27 @@
         /* ============ APP BAR ============ */
         .app-bar{
             flex-shrink:0; background:var(--surface); color:var(--primary);
-            padding:max(var(--safe-top),14px) 18px 14px;
+            padding:max(var(--safe-top),7px) 14px 7px;
             display:flex; justify-content:space-between; align-items:center;
             z-index:100; border-bottom:1px solid var(--border);
             box-shadow:var(--shadow-sm);
         }
-        .app-title{ font-size:21px; font-weight:800; letter-spacing:-.5px; display:flex; align-items:center; gap:9px; }
-        .app-title .brand-dot{ width:8px; height:8px; border-radius:50%; background:var(--primary); box-shadow:0 0 0 4px rgba(63,81,181,.18); }
+        .app-title{ font-size:17px; font-weight:800; letter-spacing:-.3px; display:flex; align-items:center; gap:7px; }
+        .app-title .brand-dot{ width:6px; height:6px; border-radius:50%; background:var(--primary); box-shadow:0 0 0 3px rgba(63,81,181,.18); }
         .app-bar-icons{ display:flex; gap:4px; align-items:center; }
         .icon-btn{
-            width:42px; height:42px; border-radius:50%;
+            width:34px; height:34px; border-radius:50%;
             display:flex; align-items:center; justify-content:center;
             color:var(--text-muted); transition:all .2s var(--easing); position:relative;
         }
         .icon-btn:hover{ background:var(--surface-hover); color:var(--primary); }
         .icon-btn:active{ transform:scale(.9); }
-        .icon-btn i{ font-size:22px; }
+        .icon-btn i{ font-size:19px; }
         .icon-btn .badge{ position:absolute; top:6px; right:6px; min-width:16px; height:16px; padding:0 4px; background:var(--danger); color:#fff; border-radius:8px; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; }
 
         /* Search bar */
-        .search-bar{ padding:8px 16px 12px; background:var(--surface); border-bottom:1px solid var(--border); }
-        .search-input{ width:100%; padding:11px 16px 11px 46px; border-radius:24px; border:1px solid var(--border); background:var(--surface-2); color:var(--text); font-size:14px; outline:none; transition:.2s; }
+        .search-bar{ padding:4px 14px 6px; background:var(--surface); border-bottom:1px solid var(--border); }
+        .search-input{ width:100%; padding:8px 14px 8px 42px; border-radius:24px; border:1px solid var(--border); background:var(--surface-2); color:var(--text); font-size:14px; outline:none; transition:.2s; }
         .search-input:focus{ border-color:var(--primary); background:var(--surface); box-shadow:0 0 0 3px rgba(63,81,181,.1); }
         .search-wrap{ position:relative; }
         .search-wrap i{ position:absolute; left:16px; top:50%; transform:translateY(-50%); color:var(--text-light); font-size:19px; pointer-events:none; }
@@ -159,10 +159,10 @@
 
         /* ============ LIST ITEMS ============ */
         .list-item{
-            display:flex; align-items:center; padding:12px 16px;
+            display:flex; align-items:center; padding:8px 14px;
             cursor:pointer; background:var(--surface);
             transition:background .15s var(--easing);
-            margin:3px 8px; border-radius:var(--radius-md);
+            margin:2px 6px; border-radius:var(--radius-md);
             position:relative; gap:13px;
         }
         .list-item:hover{ background:var(--surface-hover); }
@@ -170,9 +170,9 @@
         .list-item::after{ content:''; position:absolute; left:72px; right:0; bottom:0; height:1px; background:var(--border); }
         .list-item:last-child::after{ display:none; }
         .avatar{
-            width:52px; height:52px; background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+            width:44px; height:44px; background:linear-gradient(135deg,var(--primary),var(--primary-dark));
             color:#fff; border-radius:50%; display:flex; justify-content:center; align-items:center;
-            font-size:20px; font-weight:700; flex-shrink:0; overflow:hidden;
+            font-size:17px; font-weight:700; flex-shrink:0; overflow:hidden;
             position:relative; box-shadow:var(--shadow-sm);
         }
         .avatar img{ width:100%; height:100%; object-fit:cover; }
@@ -203,8 +203,8 @@
 
         /* ============ FAB ============ */
         .fab{
-            position:fixed; bottom:calc(88px + var(--safe-bottom)); right:18px;
-            width:56px; height:56px; border-radius:18px;
+            position:fixed; bottom:calc(72px + var(--safe-bottom)); right:16px;
+            width:50px; height:50px; border-radius:16px;
             background:linear-gradient(135deg,var(--primary),var(--primary-dark));
             color:#fff; display:flex; justify-content:center; align-items:center;
             box-shadow:0 8px 22px rgba(63,81,181,.4); cursor:pointer; z-index:90;
@@ -212,9 +212,9 @@
         }
         .fab:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(63,81,181,.5); }
         .fab:active{ transform:scale(.92); }
-        .fab i{ font-size:24px; }
-        .fab-secondary{ bottom:calc(156px + var(--safe-bottom)); background:var(--surface); color:var(--primary); border:1px solid var(--border); box-shadow:var(--shadow-md); }
-        .fab-pencil{ position:fixed; bottom:calc(156px + var(--safe-bottom)); right:26px; width:44px; height:44px; background:var(--surface); color:var(--text-muted); border-radius:14px; display:flex; justify-content:center; align-items:center; box-shadow:var(--shadow-md); cursor:pointer; z-index:90; border:1px solid var(--border); transition:all .2s var(--easing); }
+        .fab i{ font-size:22px; }
+        .fab-secondary{ bottom:calc(132px + var(--safe-bottom)); background:var(--surface); color:var(--primary); border:1px solid var(--border); box-shadow:var(--shadow-md); }
+        .fab-pencil{ position:fixed; bottom:calc(132px + var(--safe-bottom)); right:24px; width:40px; height:40px; background:var(--surface); color:var(--text-muted); border-radius:14px; display:flex; justify-content:center; align-items:center; box-shadow:var(--shadow-md); cursor:pointer; z-index:90; border:1px solid var(--border); transition:all .2s var(--easing); }
         .fab-pencil:hover{ color:var(--primary); transform:translateY(-2px); }
         .fab-pencil i{ font-size:20px; }
 
@@ -222,12 +222,12 @@
         .bottom-nav{
             flex-shrink:0; background:var(--nav-bg);
             display:flex; justify-content:space-around;
-            padding:8px 0 max(var(--safe-bottom),8px);
+            padding:5px 0 max(var(--safe-bottom),5px);
             border-top:1px solid var(--border); z-index:100;
             box-shadow:0 -2px 10px rgba(0,0,0,.04);
         }
-        .nav-item{ display:flex; flex-direction:column; align-items:center; gap:3px; color:var(--text-light); cursor:pointer; width:33.3%; padding:6px 0; transition:color .2s var(--easing); position:relative; }
-        .nav-item i{ font-size:24px; transition:transform .25s var(--easing); }
+        .nav-item{ display:flex; flex-direction:column; align-items:center; gap:2px; color:var(--text-light); cursor:pointer; width:33.3%; padding:4px 0; transition:color .2s var(--easing); position:relative; }
+        .nav-item i{ font-size:22px; transition:transform .25s var(--easing); }
         .nav-item span{ font-size:11px; font-weight:600; letter-spacing:.2px; }
         .nav-item.active{ color:var(--primary); }
         .nav-item.active i{ transform:translateY(-2px) scale(1.08); }
@@ -237,11 +237,11 @@
         .chat-window{ display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:var(--bg); z-index:200; flex-direction:column; animation:slideInRight .3s var(--easing); }
         @keyframes slideInRight{ from{ transform:translateX(100%);} to{ transform:none; } }
         .chat-header{
-            flex-shrink:0; background:var(--surface); padding:max(var(--safe-top),10px) 12px 10px;
+            flex-shrink:0; background:var(--surface); padding:max(var(--safe-top),6px) 10px 6px;
             display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--border);
             box-shadow:var(--shadow-sm);
         }
-        .chat-header .back-btn{ width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:.2s; flex-shrink:0; }
+        .chat-header .back-btn{ width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:.2s; flex-shrink:0; }
         .chat-header .back-btn:hover{ background:var(--surface-hover); }
         .chat-header .back-btn i{ font-size:20px; color:var(--text); }
         .chat-header-info{ flex:1; min-width:0; cursor:pointer; }
@@ -251,28 +251,28 @@
         .chat-header-actions{ display:flex; gap:2px; }
 
         .chat-messages{
-            flex:1; padding:16px 14px; overflow-y:auto; -webkit-overflow-scrolling:touch;
+            flex:1; padding:12px 12px; overflow-y:auto; -webkit-overflow-scrolling:touch;
             display:flex; flex-direction:column; gap:6px; scroll-behavior:smooth;
         }
         .chat-date-sep{ align-self:center; background:var(--surface); color:var(--text-muted); font-size:11px; font-weight:600; padding:4px 12px; border-radius:12px; box-shadow:var(--shadow-sm); margin:8px 0; }
 
         .chat-input-area{
-            flex-shrink:0; background:var(--surface); padding:8px 10px max(var(--safe-bottom),8px);
+            flex-shrink:0; background:var(--surface); padding:6px 8px max(var(--safe-bottom),6px);
             display:flex; gap:8px; align-items:flex-end; border-top:1px solid var(--border);
         }
-        .attach-btn{ width:42px; height:42px; border-radius:50%; display:flex; justify-content:center; align-items:center; color:var(--text-muted); flex-shrink:0; transition:.2s; }
+        .attach-btn{ width:36px; height:36px; border-radius:50%; display:flex; justify-content:center; align-items:center; color:var(--text-muted); flex-shrink:0; transition:.2s; }
         .attach-btn:hover{ background:var(--surface-hover); color:var(--primary); }
         .attach-btn i{ font-size:26px; }
         .chat-input-wrap{ flex:1; display:flex; align-items:center; background:var(--surface-2); border:1px solid var(--border); border-radius:24px; padding:2px 4px 2px 16px; transition:.2s; }
         .chat-input-wrap:focus-within{ border-color:var(--primary); box-shadow:0 0 0 3px rgba(63,81,181,.1); }
-        .chat-input-wrap input{ flex:1; padding:11px 8px; border:none; background:transparent; color:var(--text); font-size:15px; outline:none; }
+        .chat-input-wrap input{ flex:1; padding:9px 6px; border:none; background:transparent; color:var(--text); font-size:15px; outline:none; }
         .chat-input-wrap .emoji-btn{ width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--text-muted); }
         .chat-input-wrap .emoji-btn i{ font-size:22px; }
-        .btn-send{ width:46px; height:46px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; border-radius:50%; display:flex; justify-content:center; align-items:center; flex-shrink:0; box-shadow:0 4px 12px rgba(63,81,181,.35); transition:all .2s var(--easing); }
+        .btn-send{ width:40px; height:40px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; border-radius:50%; display:flex; justify-content:center; align-items:center; flex-shrink:0; box-shadow:0 4px 12px rgba(63,81,181,.35); transition:all .2s var(--easing); }
         .btn-send:hover{ transform:scale(1.05); }
         .btn-send:active{ transform:scale(.92); }
         .btn-send:disabled{ opacity:.5; transform:none; }
-        .btn-send i{ font-size:20px; }
+        .btn-send i{ font-size:18px; }
 
         /* ============ BUBBLES ============ */
         .bubble{
@@ -361,9 +361,9 @@
         .status-preview-box{ display:none; width:100%; height:180px; border-radius:var(--radius-md); margin-bottom:18px; object-fit:contain; background:#000; border:1px solid var(--border); box-shadow:var(--shadow-md); }
 
         /* ============ PROFILE ============ */
-        .profile-header{ text-align:center; padding:28px 20px 14px; }
+        .profile-header{ text-align:center; padding:18px 20px 10px; }
         .profile-avatar-lg{
-            width:104px; height:104px; margin:0 auto 18px;
+            width:88px; height:88px; margin:0 auto 12px;
             border-radius:50%; background:linear-gradient(135deg,var(--primary),var(--primary-dark));
             color:#fff; display:flex; align-items:center; justify-content:center;
             font-size:42px; font-weight:800; cursor:pointer; overflow:hidden;
@@ -372,7 +372,7 @@
         }
         .profile-avatar-lg:hover{ transform:scale(1.04); }
         .profile-avatar-lg img{ width:100%; height:100%; object-fit:cover; }
-        .profile-avatar-lg .cam-badge{ position:absolute; bottom:2px; right:2px; width:30px; height:30px; background:var(--primary); border:2.5px solid var(--surface); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+        .profile-avatar-lg .cam-badge{ position:absolute; bottom:2px; right:2px; width:24px; height:24px; background:var(--primary); border:2.5px solid var(--surface); border-radius:50%; display:flex; align-items:center; justify-content:center; }
         .profile-avatar-lg .cam-badge i{ font-size:16px; color:#fff; }
 
         .profile-pic-upload{ width:100px; height:100px; border-radius:50%; background:var(--surface-2); border:2px dashed var(--primary); display:flex; justify-content:center; align-items:center; margin:0 auto 20px; cursor:pointer; overflow:hidden; position:relative; transition:.25s var(--easing); }
@@ -380,13 +380,13 @@
         .profile-pic-upload img{ width:100%; height:100%; object-fit:cover; }
 
         /* Settings */
-        .settings-section-title{ padding:18px 20px 8px; font-size:12px; font-weight:700; color:var(--text-muted); letter-spacing:.6px; text-transform:uppercase; }
-        .settings-box{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:14px 16px; margin:0 16px 10px; display:flex; justify-content:space-between; align-items:center; transition:.15s; }
+        .settings-section-title{ padding:12px 20px 6px; font-size:12px; font-weight:700; color:var(--text-muted); letter-spacing:.6px; text-transform:uppercase; }
+        .settings-box{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:10px 14px; margin:0 14px 8px; display:flex; justify-content:space-between; align-items:center; transition:.15s; }
         .settings-box:hover{ background:var(--surface-hover); }
         .settings-box-label{ font-size:11px; color:var(--text-light); font-weight:700; letter-spacing:.5px; margin-bottom:2px; text-transform:uppercase; }
         .settings-box-value{ font-weight:600; font-size:15px; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
         .settings-row{ background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); margin:0 16px 10px; overflow:hidden; }
-        .settings-row-item{ display:flex; align-items:center; gap:14px; padding:14px 16px; cursor:pointer; transition:.15s; }
+        .settings-row-item{ display:flex; align-items:center; gap:12px; padding:10px 14px; cursor:pointer; transition:.15s; }
         .settings-row-item:hover{ background:var(--surface-hover); }
         .settings-row-item:not(:last-child){ border-bottom:1px solid var(--border); }
         .settings-row-item i.row-ic{ color:var(--primary); font-size:22px; }
@@ -592,6 +592,32 @@
         .call-quality.medium{ color:#FFB300; }
         .call-quality.poor{ color:#E91E63; }
 
+
+        /* ============ DROPDOWN MENU ============ */
+        .dropdown-backdrop{ display:none; position:fixed; inset:0; z-index:998; }
+        .dropdown-backdrop.active{ display:block; }
+        .dropdown-menu{
+            display:none; position:fixed; z-index:999;
+            background:var(--surface); border-radius:14px;
+            box-shadow:var(--shadow-lg); min-width:190px;
+            overflow:hidden; padding:4px 0;
+            animation:dropdownIn .18s var(--easing) both;
+        }
+        .dropdown-menu.active{ display:block; }
+        @keyframes dropdownIn{ from{ opacity:0; transform:scale(.95) translateY(-6px);} to{ opacity:1; transform:none; } }
+        .dropdown-item{
+            display:flex; align-items:center; gap:14px;
+            padding:11px 18px; cursor:pointer; transition:background .12s;
+            font-size:14px; font-weight:500; color:var(--text);
+        }
+        .dropdown-item:hover{ background:var(--surface-hover); }
+        .dropdown-item:active{ background:var(--tap); }
+        .dropdown-item i{ font-size:20px; color:var(--text-muted); width:22px; }
+        .dropdown-item.danger{ color:var(--danger); }
+        .dropdown-item.danger i{ color:var(--danger); }
+        .dropdown-item.success i{ color:var(--success); }
+        .dropdown-divider{ height:1px; background:var(--border); margin:4px 0; }
+
         /* Responsive */
         @media(min-width:600px){
             .auth-box{ max-width:420px; }
@@ -627,8 +653,19 @@
             <div class="app-title"><span class="brand-dot"></span> ISB Messenger</div>
             <div class="app-bar-icons">
                 <div class="icon-btn" onclick="syncDrive()" title="Sync"><i class="material-icons" id="syncIcon">sync</i></div>
-                <div class="icon-btn" onclick="openSettingsMenu()" title="Menu"><i class="material-icons">more_vert</i></div>
+                <div class="icon-btn" onclick="toggleAppMenu(event)" title="Menu"><i class="material-icons">more_vert</i></div>
             </div>
+        </div>
+        <div class="dropdown-backdrop" id="appMenuBackdrop" onclick="closeAllDropdowns()"></div>
+        <div class="dropdown-menu" id="appMenu">
+            <div class="dropdown-item" onclick="closeAllDropdowns(); openNewGroupModal()"><i class="material-icons">group_add</i> New Group</div>
+            <div class="dropdown-item" onclick="closeAllDropdowns(); openNewChatModal()"><i class="material-icons">person_add</i> New Chat</div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item" onclick="closeAllDropdowns(); toggleDarkMode()"><i class="material-icons">dark_mode</i> Dark Mode</div>
+            <div class="dropdown-item" onclick="closeAllDropdowns(); switchNav('settingsTab', document.querySelectorAll('.nav-item')[2])"><i class="material-icons">settings</i> Settings</div>
+            <div class="dropdown-item" onclick="closeAllDropdowns(); showAbout()"><i class="material-icons">info</i> About</div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item danger" onclick="closeAllDropdowns(); logoutUser()"><i class="material-icons">logout</i> Log Out</div>
         </div>
 
         <div class="container">
@@ -738,7 +775,7 @@
     <div id="chatWindow" class="chat-window">
         <div class="chat-header">
             <div class="back-btn" onclick="closeChat()"><i class="material-icons">arrow_back</i></div>
-            <div class="avatar" id="chatAvatar" style="width:40px; height:40px; font-size:17px;">U</div>
+            <div class="avatar" id="chatAvatar" style="width:34px; height:34px; font-size:15px;">U</div>
             <div class="chat-header-info" onclick="openContactInfo()">
                 <div class="chat-header-name" id="chatTitle">User</div>
                 <div class="chat-header-status" id="chatHeaderStatus"><span class="online-dot"></span> online</div>
@@ -746,9 +783,19 @@
             <div class="chat-header-actions">
                 <div class="icon-btn" onclick="startVideoCall()" title="Video Call"><i class="material-icons">videocam</i></div>
                 <div class="icon-btn" onclick="startVoiceCall()" title="Voice Call"><i class="material-icons">call</i></div>
-                <div class="icon-btn" onclick="openChatMenu()"><i class="material-icons">more_vert</i></div>
+                <div class="icon-btn" onclick="toggleChatMenu(event)" title="Options"><i class="material-icons">more_vert</i></div>
             </div>
         </div>
+        <div class="dropdown-backdrop" id="chatMenuBackdrop" onclick="closeAllDropdowns()"></div>
+        <div class="dropdown-menu" id="chatMenu">
+            <div class="dropdown-item" onclick="closeAllDropdowns(); openContactInfo()"><i class="material-icons">account_circle</i> Contact Info</div>
+            <div class="dropdown-item" onclick="closeAllDropdowns(); toggleInChatSearch()"><i class="material-icons">search</i> Search Messages</div>
+            <div class="dropdown-item" onclick="closeAllDropdowns(); clearChat()"><i class="material-icons">clear_all</i> Clear Chat</div>
+            <div class="dropdown-item" onclick="closeAllDropdowns(); exportChat()"><i class="material-icons">file_download</i> Export Chat</div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item danger" onclick="closeAllDropdowns(); blockContact()"><i class="material-icons">block</i> Block Contact</div>
+        </div>
+        <div class="in-chat-search" id="inChatSearch" style="display:none;"><div class="search-wrap" style="padding:4px 10px;"><i class="material-icons" style="font-size:17px;">search</i><input type="text" class="search-input" id="inChatSearchInput" placeholder="Search in chat..." oninput="searchInChat()" style="padding:7px 12px 7px 38px; font-size:13px;"></div></div>
         <div class="chat-messages" id="chatMessagesBox"></div>
         <div id="selectedFileBar">
             <i class="material-icons file-ic">insert_drive_file</i>
@@ -861,6 +908,9 @@
         <div class="modal-content" style="text-align:center;">
             <div class="modal-header" style="justify-content:center;"><h3>Message Options</h3><button class="close-btn" style="position:absolute; top:18px; right:18px;" onclick="closeModal('msgOptionsModal')"><i class="material-icons">close</i></button></div>
             <div class="modal-btn-stack">
+                <button class="btn-primary" onclick="copyMessage(activeActionMsg)"><i class="material-icons" style="vertical-align:middle; margin-right:6px;">content_copy</i> COPY</button>
+                <button class="btn-primary" onclick="forwardMessage(activeActionMsg)"><i class="material-icons" style="vertical-align:middle; margin-right:6px;">forward</i> FORWARD</button>
+                <button class="btn-primary" onclick="starMessage(activeActionMsg)"><i class="material-icons" style="vertical-align:middle; margin-right:6px;">star</i> STAR</button>
                 <button class="btn-primary" onclick="shareSelectedMsg()"><i class="material-icons" style="vertical-align:middle; margin-right:6px;">share</i> SHARE</button>
                 <button class="btn-primary btn-danger" onclick="deleteSelectedMsg()"><i class="material-icons" style="vertical-align:middle; margin-right:6px;">delete</i> DELETE FOR ALL</button>
                 <button class="btn-primary btn-ghost" onclick="closeModal('msgOptionsModal')">CANCEL</button>
@@ -1722,11 +1772,136 @@
     function closeEmojiPanel(){ document.getElementById('emojiPanel').classList.remove('active'); }
     function insertEmoji(e){ let inp = document.getElementById('chatInputMsg'); inp.value += e; inp.focus(); }
 
-    // ============ MENU HELPERS ============
-    function openSettingsMenu(){ showToast('Use Settings tab for options', 'info', 1500); }
-    function openContactInfo(){ showToast(getUserInfoByEmail(currentChatContact).username, 'info', 1500); }
-    function openChatMenu(){ showToast('Chat options', 'info', 1500); }
-    function showAbout(){ showToast('ISB Premium v3.0 — Encrypted Messenger', 'info', 2500); }
+    // ============ DROPDOWN MENUS ============
+    function toggleAppMenu(e){
+        e.stopPropagation();
+        let menu = document.getElementById('appMenu');
+        let backdrop = document.getElementById('appMenuBackdrop');
+        let isOpen = menu.classList.contains('active');
+        closeAllDropdowns();
+        if(!isOpen){
+            menu.classList.add('active');
+            backdrop.classList.add('active');
+            let rect = e.target.closest('.icon-btn').getBoundingClientRect();
+            menu.style.top = (rect.bottom + 4) + 'px';
+            menu.style.right = '10px';
+        }
+    }
+    function toggleChatMenu(e){
+        e.stopPropagation();
+        let menu = document.getElementById('chatMenu');
+        let backdrop = document.getElementById('chatMenuBackdrop');
+        let isOpen = menu.classList.contains('active');
+        closeAllDropdowns();
+        if(!isOpen){
+            menu.classList.add('active');
+            backdrop.classList.add('active');
+            let rect = e.target.closest('.icon-btn').getBoundingClientRect();
+            menu.style.top = (rect.bottom + 4) + 'px';
+            menu.style.right = '10px';
+        }
+    }
+    function closeAllDropdowns(){
+        document.querySelectorAll('.dropdown-menu, .dropdown-backdrop').forEach(el => el.classList.remove('active'));
+    }
+
+    // ============ CHAT FUNCTIONS ============
+    function openContactInfo(){
+        if(!currentChatContact) return;
+        let uInfo = getUserInfoByEmail(currentChatContact);
+        let avatar = uInfo.avatar ? '<img src="'+uInfo.avatar+'" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">' : '<div style="width:60px;height:60px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;">'+uInfo.username.charAt(0).toUpperCase()+'</div>';
+        let msgCount = APP_STATE.msgs.filter(m => !m.isGroup && ((m.from===currentUserEmail&&m.to===currentChatContact)||(m.from===currentChatContact&&m.to===currentUserEmail))).length;
+        showToast(uInfo.username + ' | ' + msgCount + ' messages | ' + currentChatContact, 'info', 3500);
+    }
+    function toggleInChatSearch(){
+        let bar = document.getElementById('inChatSearch');
+        if(bar.style.display === 'none'){ bar.style.display = 'block'; document.getElementById('inChatSearchInput').focus(); }
+        else { bar.style.display = 'none'; document.getElementById('inChatSearchInput').value = ''; searchInChat(); }
+    }
+    function searchInChat(){
+        let q = document.getElementById('inChatSearchInput').value.toLowerCase();
+        document.querySelectorAll('#chatMessagesBox .bubble').forEach(b => {
+            let txt = b.textContent.toLowerCase();
+            b.style.opacity = q && !txt.includes(q) ? '0.3' : '1';
+        });
+    }
+    function clearChat(){
+        if(!currentChatContact) return;
+        if(!confirm('Clear all messages in this chat? This cannot be undone.')) return;
+        let toDelete = APP_STATE.msgs.filter(m => !m.isGroup && ((m.from===currentUserEmail&&m.to===currentChatContact)||(m.from===currentChatContact&&m.to===currentUserEmail)));
+        toDelete.forEach(m => {
+            database.ref('messages').orderByChild('id').equalTo(m.id).once('value', snap => { snap.forEach(child => child.ref.remove()); });
+        });
+        showToast('Chat cleared', 'success');
+        renderChatMessages();
+    }
+    function exportChat(){
+        if(!currentChatContact) return;
+        let msgs = APP_STATE.msgs.filter(m => !m.isGroup && ((m.from===currentUserEmail&&m.to===currentChatContact)||(m.from===currentChatContact&&m.to===currentUserEmail)));
+        let lines = ['ISB Chat Export - ' + new Date().toLocaleString(), 'Contact: ' + currentChatContact, 'Messages: ' + msgs.length, ''];
+        msgs.forEach(m => {
+            let who = m.from === currentUserEmail ? 'Me' : getUserInfoByEmail(m.from).username;
+            lines.push('[' + m.time + '] ' + who + ': ' + (m.decryptedFullText && !m.decryptedFullText.startsWith('ISB_') ? m.decryptedFullText : '[Media/File]'));
+        });
+        let blob = new Blob([lines.join('\n')], {type:'text/plain'});
+        let a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'ISB_Chat_' + currentChatContact.split('@')[0] + '.txt';
+        a.click();
+        showToast('Chat exported', 'success');
+    }
+    function blockContact(){
+        if(!currentChatContact) return;
+        if(!confirm('Block ' + getUserInfoByEmail(currentChatContact).username + '? You will not receive messages from them.')) return;
+        let blocked = JSON.parse(localStorage.getItem('isb_blocked') || '[]');
+        if(!blocked.includes(currentChatContact)){ blocked.push(currentChatContact); localStorage.setItem('isb_blocked', JSON.stringify(blocked)); }
+        showToast('Contact blocked', 'success');
+        closeChat();
+    }
+
+    // ============ MESSAGE FUNCTIONS ============
+    function copyMessage(msg){
+        if(msg.decryptedFullText && !msg.decryptedFullText.startsWith('ISB_')){
+            navigator.clipboard.writeText(msg.decryptedFullText).then(() => showToast('Message copied', 'success', 1500));
+        }
+    }
+    function forwardMessage(msg){
+        closeModal('msgOptionsModal');
+        if(!msg.decryptedFullText) return;
+        let target = prompt('Enter Gmail or @username to forward to:');
+        if(!target) return;
+        target = target.trim().toLowerCase();
+        let targetEmail = '';
+        if(target.includes('@')) targetEmail = target;
+        else { if(target.startsWith('@')) target = target.substring(1); if(APP_STATE.users[target]) targetEmail = APP_STATE.users[target].email; else { showToast('User not found', 'error'); return; } }
+        database.ref('messages').push({
+            id: Date.now() + Math.random().toString().substring(2,8),
+            from: currentUserEmail, to: targetEmail,
+            payload: msg.payload, time: new Date().toLocaleString(), isGroup: false
+        });
+        showToast('Message forwarded', 'success');
+    }
+    function starMessage(msg){
+        let starred = JSON.parse(localStorage.getItem('isb_starred') || '[]');
+        let idx = starred.indexOf(msg.id);
+        if(idx >= 0){ starred.splice(idx, 1); showToast('Unstarred', 'info', 1200); }
+        else { starred.push(msg.id); showToast('Starred', 'success', 1200); }
+        localStorage.setItem('isb_starred', JSON.stringify(starred));
+    }
+    function shareContact(){
+        if(!currentChatContact) return;
+        let uInfo = getUserInfoByEmail(currentChatContact);
+        if(navigator.share){
+            navigator.share({ title: 'ISB Contact', text: uInfo.username + ' (' + currentChatContact + ')' }).catch(()=>{});
+        } else {
+            navigator.clipboard.writeText(uInfo.username + ' (' + currentChatContact + ')').then(() => showToast('Contact copied', 'success', 1500));
+        }
+    }
+
+    // ============ ABOUT ============
+    function showAbout(){
+        showToast('ISB Premium v3.0 — End-to-End Encrypted Messenger with Voice & Video Calls', 'info', 3000);
+    }
     function syncDrive(){ let ic=document.getElementById('syncIcon'); ic.classList.add('animate-spin'); setTimeout(()=>{ ic.classList.remove('animate-spin'); showToast('Sync complete', 'success', 1500); }, 1200); }
 
     // ============ WEBRTC CALLING ENGINE ============
